@@ -93,9 +93,35 @@ func mapExample() {
 	}
 }
 
+func findSmallest() {
+	x := []int{
+		48, 96, 86, 68,
+		57, 82, 63, 70,
+		37, 34, 83, 27,
+		19, 97, 9, 17,
+		2, 1, 3, 4,
+	}
+
+	// var smallest = x[0]
+	// for _, value := range x {
+	// 	if value < smallest {
+	// 		smallest = value
+	// 	}
+	// }
+	var smallest int
+
+	for index, value := range x {
+		if index == 0 || value < smallest {
+			smallest = value
+		}
+	}
+	fmt.Println(smallest)
+}
+
 func main() {
 	// calculateAverage()
 	// appendExample()
 	// copyExample()
-	mapExample()
+	// mapExample()
+	findSmallest()
 }
