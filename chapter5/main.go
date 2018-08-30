@@ -22,6 +22,80 @@ func calculateAverage() {
 	fmt.Println(total / float64(len(x)))
 }
 
+// append example
+func appendExample() {
+	slice1 := []int{1, 2, 3}
+	slice2 := append(slice1, 4, 5)
+	fmt.Println(slice1, slice2)
+}
+
+// copy example
+func copyExample() {
+	slice1 := []int{5, 7, 9}
+	slice2 := make([]int, 2)
+	copy(slice2, slice1)
+	fmt.Println(slice1, slice2)
+}
+
+// map example
+func mapExample() {
+	elements := make(map[string]string)
+	elements["H"] = "Hydrogen"
+	elements["He"] = "Helium"
+	elements["Li"] = "Lithium"
+	elements["Be"] = "Beryllium"
+	elements["B"] = "Boron"
+	elements["C"] = "Carbon"
+	elements["N"] = "Nitrogen"
+	elements["O"] = "Oxygen"
+	elements["F"] = "Fluorine"
+	elements["Ne"] = "Neon"
+
+	fmt.Println(elements["Li"])
+	fmt.Println(elements["Un"])
+
+	if name, ok := elements["Un"]; ok {
+		fmt.Println(name, ok)
+	} else {
+		fmt.Println("I won't be printed")
+	}
+
+	if name, ok := elements["H"]; ok {
+		fmt.Println(name, ok)
+	}
+
+	// nested map
+	_elements := map[string]map[string]string{
+		"H": map[string]string{
+			"name":  "Hydrogen",
+			"state": "gas",
+		},
+		"He": map[string]string{
+			"name":  "Helium",
+			"state": "gas",
+		},
+		"Li": map[string]string{
+			"name":  "Lithium",
+			"state": "solid",
+		},
+		"Be": map[string]string{
+			"name":  "Beryllium",
+			"state": "solid",
+		},
+		"B": map[string]string{
+			"name":  "Boron",
+			"state": "solid",
+		},
+	}
+
+	if el, ok := _elements["Be"]; ok {
+		fmt.Println(el["name"], el["state"])
+	}
+}
+
 func main() {
-	calculateAverage()
+	// calculateAverage()
+	// appendExample()
+	// copyExample()
+	mapExample()
 }
