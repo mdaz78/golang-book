@@ -6,7 +6,7 @@ import (
 
 // array example
 func calculateAverage() {
-	var total float64 = 0
+	var total float64
 	var x [5]float64
 	x[0] = 98
 	x[1] = 93
